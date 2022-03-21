@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Home Page</title>
-</head>
-<body>
-{% block content %}
-{% for post in object_list %}
+  </head>
+  <body>
+    {% block content %} {% for post in object_list %}
 
-<div>
-    <h2><a href="#">{{ post.title }}</a></h2>
-    <p>{{ post.body }}</p>
-</div>
+    <div>
+      <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+      <p>{{ post.body }}</p>
+    </div>
 
-{% endfor %}
-{% endblock content%}
-</body>
+    {% endfor %} {% endblock content%}
+  </body>
 </html>

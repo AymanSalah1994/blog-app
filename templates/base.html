@@ -2,7 +2,6 @@
 {% load static %}
 <html lang="en">
   <head>
-
     <meta charset="UTF-8" />
     <title>Home Base</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
@@ -13,8 +12,8 @@ t"
     />
   </head>
   <body>
-    <h1> Django Blog</a></h1>
-    <hr>
+    <h1><a href=" {% url 'home' %} ">Django Blog</a></h1>
+    <hr />
     <div>{% block content %} {% endblock content %}</div>
   </body>
 </html>
