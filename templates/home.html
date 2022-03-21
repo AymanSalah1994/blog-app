@@ -10,8 +10,8 @@
 {% for post in object_list %}
 
 <div>
-    <h2>{{ post.title }}</h2>
-    <p><a href="">{{ post.body }}</a></p>
+    <h2><a href="#">{{ post.title }}</a></h2>
+    <p>{{ post.body }}</p>
 </div>
 
 {% endfor %}
