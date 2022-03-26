@@ -1,3 +1,4 @@
+from turtle import pos
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from .models import Post
@@ -37,3 +38,5 @@ class BlogTest(TestCase):
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, 'A good title')
         self.assertTemplateUsed(response, 'post_detail.html')
+
+#  We Created Two More Views : > Create View , Delete , Update

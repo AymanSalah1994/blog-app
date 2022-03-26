@@ -1,10 +1,10 @@
+from dataclasses import field
 from email import contentmanager
 from multiprocessing import context
-from re import template
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView , DeleteView
 
-
+from django.urls import reverse_lazy
 # Create your views here.
 from blog.models import Post
 
@@ -15,7 +15,6 @@ class BlogListView(ListView):
 
 
 class BlogDetailView(DetailView):
-    # It does Not take pk But it is Expecting it !!
     model = Post
     template_name = 'post_detail.html'
     # context_object_name = "bla"
@@ -32,3 +31,8 @@ class BlogUpdateView(UpdateView):
     template_name = "post_update.html"
     fields = ['title', 'body']
     # fields  = "__all__"
+
+class BlogDeleteView(DeleteView):
+    model = Post 
+    template_name = "post_delete.html"
+    success_url = reverse_lazy('home')

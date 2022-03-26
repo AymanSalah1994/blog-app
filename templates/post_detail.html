@@ -15,6 +15,10 @@
       <a href="{% url 'post_update' post.id %}">
         ++ Edit this Post
       </a>
+      <br>
+      <a href="{% url 'post_delete' post.id %}">
+        Delete this Post ! 
+      </a>
     </div>
     {% endblock content %}
   </body>
