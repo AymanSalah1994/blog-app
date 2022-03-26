@@ -11,6 +11,12 @@
 t"
     />
   </head>
+  {% if user.is_authenticated %} Welcome : {{ user.username }}
+  <a href="{% url 'logout' %}">Log out : </a>
+  {% else %} You are Not Logged in
+  <a href=" {% url 'login' %}"> Login </a>
+  {% endif %}
+
   <body>
     <div class="nav-left">
       <a href=" {% url 'home' %} ">Django Blog</a>
