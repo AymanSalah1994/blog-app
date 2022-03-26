@@ -2,7 +2,7 @@ from dataclasses import field
 from email import contentmanager
 from multiprocessing import context
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView , DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from django.urls import reverse_lazy
 # Create your views here.
@@ -32,7 +32,8 @@ class BlogUpdateView(UpdateView):
     fields = ['title', 'body']
     # fields  = "__all__"
 
+
 class BlogDeleteView(DeleteView):
-    model = Post 
+    model = Post
     template_name = "post_delete.html"
     success_url = reverse_lazy('home')
